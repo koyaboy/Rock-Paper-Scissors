@@ -7,53 +7,103 @@ function computerRandomSelection(){
 
 }
 
+
+const rock = document.querySelector('#rock');
+const paper = document.querySelector('#paper');
+const scissors = document.querySelector('#scissors');
+
+
+rock.addEventListener('click', function(){
+    playRound('rock',computerRandomSelection());
+
+});
+paper.addEventListener('click', function(){
+    playRound('paper',computerRandomSelection());
+});
+
+
+scissors.addEventListener('click', function(){
+    playRound('scissors',computerRandomSelection());
+    
+});
+
 function playRound(playerSelection, computerSelection){
+
+        let body = document.querySelector('body');
+        const result = document.createElement('div');
+ 
+        
         if((playerSelection == 'rock') && (computerSelection == 'scissors')){
-            console.log("YOU WIN ,ROCK beats SCISSORS" );
+            result.textContent = "YOU WIN ,ROCK beats SCISSORS";
+            body.appendChild(result);
         
         }
         else if((playerSelection == 'scissors') && (computerSelection == 'rock')){
-            console.log("YOU LOSE , ROCK BEATS SCISSORS");
+            result.textContent ="YOU LOSE , ROCK BEATS SCISSORS";
+            body.appendChild(result);
+
         }
         
-
         else if((playerSelection == 'paper') && (computerSelection == 'rock')){
-            console.log("YOU WIN , PAPER BEATS ROCK");
+            result.textContent = "YOU WIN , PAPER BEATS ROCK";
+            body.appendChild(result);
+
 
         }
 
         else if((playerSelection == 'rock') && (computerSelection == 'paper')){
-            console.log("YOU LOSE , PAPER beats ROCK");
+            result.textContent = "YOU LOSE , PAPER beats ROCK";
+            body.appendChild(result);
+
             
         }
 
         else if((playerSelection == 'scissors') && (computerSelection == 'paper')){
-            console.log("YOU WIN , SCISSORS beats PAPER");
+            result.textContent = "YOU WIN , SCISSORS beats PAPER";
+            body.appendChild(result);
+
         
         }
 
         else if((playerSelection == 'paper') && (computerSelection == 'scissors')){
-            console.log("YOU LOSE , SCISSORS beats PAPER");
+            result.textContent = "YOU LOSE , SCISSORS beats PAPER";
+            body.appendChild(result);
+
             
         }
 
         else if(playerSelection == computerSelection){
-            console.log(playerSelection + " = " + computerSelection , "it's a tie");
+            result.textContent = playerSelection + " = " + computerSelection , "it's a tie";
+            body.appendChild(result);
+
         }
 
         else{
-            console.log("Input correct values");
+            result.textContent = "Input correct values";
+            body.appendChild(result);
+
         }
         
-        
+       
     
 }
 
+
+
+
+
+//let computerSelect = computerRandomSelection
+
+
+
+
+
+/*
 function game(playerSelection,computerSelection){
     let playerScore = 0;
     let computerScore = 0;
     
-        
+      
     for(let i = 0; i<5; i++){
 
         playerSelection = prompt('Pick between ROCK,PAPER OR SCISSORS ').toLowerCase();
@@ -111,3 +161,4 @@ function game(playerSelection,computerSelection){
 let player;
 let computer;
 console.log(game(player,computer));
+*/
